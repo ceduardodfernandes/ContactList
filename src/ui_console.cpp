@@ -1,5 +1,8 @@
 #include "ui_console.hpp"
 #include <iostream>
+#include <sstream>
+#include <iterator>
+#include <algorithm>
 
 namespace Contacts {
     void UIConsole::ShowMenu() {
@@ -11,10 +14,21 @@ namespace Contacts {
         std::cout << "Type: find *phone* - To find a contact by phone number" << std::endl;
         std::cout << "Type: quit - To exit application" << std::endl;
         std::cout << "----" << std::endl;
+    }
 
+    AppRequest UIConsole::GetRequest(std::vector<std::string>& params) {
         std::string entry;
-
         std::cin >> entry;
         std::cin.ignore();
+
+        std::istringstream iss(entry);
+        std::vector<std::string> arguments(std::istream_iterator<std::string>{iss},
+                                        std::istream_iterator<std::string>());
+
+        if (arguments[0] == "quit") {
+            return AppRequest::Quit;
+        }
+
+        return AppRequest::ListAll;
     }
 }
