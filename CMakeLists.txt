@@ -7,6 +7,7 @@ set(SOURCE
    ${CMAKE_CURRENT_SOURCE_DIR}/src/main.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/src/ui_console.cpp
    ${CMAKE_CURRENT_SOURCE_DIR}/src/app.cpp
+   ${CMAKE_CURRENT_SOURCE_DIR}/src/data.cpp
 )
 set(HEADERS
    ${HEADERS}

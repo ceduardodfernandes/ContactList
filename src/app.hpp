@@ -3,10 +3,13 @@
 
 #include "ui_interface.hpp"
 #include "request_types.hpp"
+#include "contact.hpp"
+#include "data.hpp"
 
 namespace Contacts {
     class App {
         IUInterface *app_interface;
+        Data* DB;
         
         public:
         void Initialize();

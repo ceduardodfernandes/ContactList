@@ -3,7 +3,8 @@
 
 namespace Contacts {
     enum class AppRequest {
-        ListAll,
+        List,
+        Show,
         Find,
         Add,
         Drop,
