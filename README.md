@@ -1,10 +1,7 @@
 # ContactList
 
 ./envgen.sh
-
-cd build
-cmake ..
-make
+./build.sh
 
 The bin file will be generated at bin/ folder
 
